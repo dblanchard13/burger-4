@@ -15,13 +15,13 @@ router.get("/", function(req, res)
       burgers: data
     };
     console.log(hbsObject);
-    res.render("index", hbsObject);
+    res.render(path.join(__dirname,"index"), hbsObject);
   });
 });
 
 router.post("/", function(req, res) 
 {
-  console.log(req.body);
+  //console.log(req.body);
   burger.insertOne(
     [
     "burger_name"
@@ -38,7 +38,7 @@ router.put("/:id", function(req, res)
 {
   var id = "id = " + req.params.id;
 
-  console.log("condition: ", id);
+  //console.log("condition: ", id);
 
   burger.updateOne(
     {
