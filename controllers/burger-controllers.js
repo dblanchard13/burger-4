@@ -1,5 +1,4 @@
 var express = require("express");
-var path = require("path");
 
 var router = express.Router();
 
@@ -16,7 +15,7 @@ router.get("/", function(req, res)
       burgers: data
     };
     console.log(hbsObject);
-    res.render(path.join(__dirname,"index"), hbsObject);
+    res.render("index", hbsObject);
   });
 });
 
